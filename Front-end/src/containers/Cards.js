@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 
 import Cards from '../components/Cards';
 
-import { generateMyCardDatas, generateFindCardDatas } from '../actions/cards';
+import { generateMyCardDatas, generateFindCardDatas, generateUniqueId } from '../actions/cards';
 
 const mapStateToProps = (state) => ({
-  myCardData: state.cards.myCardData,
-  findCardData: state.cards.findCardData,
+  myCardDatas: state.cards.myCardData,
+  findCardDatas: state.cards.findCardData,
+  uniqueId: state.cards.uniqueId,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,6 +16,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   generateFindCardDatas: () => {
     dispatch(generateFindCardDatas());
+  },
+  generateUniqueId: () => {
+    dispatch(generateUniqueId());
   },
 });
 

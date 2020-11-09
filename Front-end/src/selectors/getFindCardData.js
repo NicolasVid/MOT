@@ -6,7 +6,7 @@ const getFindCardData = (datas, myCardData) => {
   const shuffledSameItems = [...sameItems].sort(() => 0.5 - Math.random());
   const otherItems = [...datas.filter((item) => !myCardData.includes(item))];
   const shuffledOtherItems = [...otherItems].sort(() => 0.5 - Math.random());
-  return [...shuffledOtherItems.slice(0, 3), ...shuffledSameItems.slice(0, 1)];
+  return [...shuffledOtherItems.slice(0, 4), ...shuffledSameItems.slice(0, 1)];
 };
 
 export default getFindCardData;

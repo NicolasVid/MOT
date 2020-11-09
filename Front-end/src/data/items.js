@@ -1,53 +1,66 @@
+import {
+  faCoffee,
+  faBomb,
+  faBug,
+  faBaby,
+  faBus,
+  faEgg,
+  faEye,
+  faFeather,
+  faBalanceScale,
+  faMusic,
+} from '@fortawesome/free-solid-svg-icons';
+
 const datas = [
   {
     id: 1,
-    image: '1',
-    name: 'name',
+    image: faCoffee,
+    name: 'Coffee',
   },
   {
     id: 2,
-    image: '2',
-    name: 'name',
+    image: faBomb,
+    name: 'Bomb',
   },
   {
     id: 3,
-    image: '3',
-    name: 'name',
+    image: faBug,
+    name: 'Bug',
   },
   {
     id: 4,
-    image: '4',
-    name: 'name',
+    image: faBaby,
+    name: 'Baby',
   },
   {
     id: 5,
-    image: '5',
-    name: 'name',
+    image: faBus,
+    name: 'Bus',
   },
   {
     id: 6,
-    image: '6',
-    name: 'name',
+    image: faEgg,
+    name: 'Egg',
   },
   {
     id: 7,
-    image: '7',
-    name: 'name',
+    image: faEye,
+    name: 'Eye',
   },
   {
     id: 8,
-    image: '8',
-    name: 'name',
+    image: faFeather,
+    name: 'Feather',
   },
   {
     id: 9,
-    image: '9',
-    name: 'name',
+    image: faBalanceScale,
+    name: 'BalanceScale',
   },
   {
     id: 10,
-    image: '10',
-    name: 'name',
+    image: faMusic,
+    name: 'Music',
   },
 ];
 

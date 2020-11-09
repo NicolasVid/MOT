@@ -6,29 +6,46 @@ import FindCard from './FindCard';
 import './cards.scss';
 
 const Cards = ({
-  myCardData,
-  findCardData,
+  myCardDatas,
+  findCardDatas,
+  uniqueId,
   generateMyCardDatas,
   generateFindCardDatas,
+  generateUniqueId,
 }) => {
   useEffect(() => {
     generateMyCardDatas();
     generateFindCardDatas();
+    generateUniqueId();
   }, []);
+
+  const handleClick = (id) => {
+    if (id === uniqueId) {
+      generateMyCardDatas();
+      generateFindCardDatas();
+      generateUniqueId();
+    }
+  };
   return (
     <div className="cards">
       <h1>Composant : cards</h1>
-      <FindCard findCardData={findCardData} />
-      <MyCard myCardData={myCardData} />
+      <FindCard findCardDatas={findCardDatas} />
+      <MyCard
+        myCardDatas={myCardDatas}
+        uniqueId
+        onClick={handleClick}
+      />
     </div>
   );
 };
 
 Cards.propTypes = ({
-  myCardData: PropTypes.array.isRequired,
-  findCardData: PropTypes.array.isRequired,
+  myCardDatas: PropTypes.array.isRequired,
+  findCardDatas: PropTypes.array.isRequired,
+  uniqueId: PropTypes.number.isRequired,
   generateMyCardDatas: PropTypes.func.isRequired,
   generateFindCardDatas: PropTypes.func.isRequired,
+  generateUniqueId: PropTypes.func.isRequired,
 });
 
 export default Cards;
