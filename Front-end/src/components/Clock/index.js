@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 import './clock.scss';
 
-const Clock = () => {
+const Clock = ({
+  storeTimer,
+}) => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
 
@@ -18,8 +20,9 @@ const Clock = () => {
 
   useEffect(() => {
     const token = setTimeout(updateTime, 1000);
-    return function cleanUp() {
+    return () => {
       clearTimeout(token);
+      storeTimer(minutes, seconds);
     };
   });
 
@@ -32,5 +35,9 @@ const Clock = () => {
     </div>
   );
 };
+
+Clock.propTypes = ({
+  storeTimer: PropTypes.func.isRequired,
+});
 
 export default Clock;

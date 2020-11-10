@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import MyCard from './MyCard';
 import FindCard from './FindCard';
 
@@ -19,6 +20,9 @@ const Cards = ({
     generateMyCardDatas();
     generateFindCardDatas();
     generateUniqueId();
+    return () => {
+      incrementScore(-1);
+    };
   }, []);
 
   const handleClick = (id) => {
@@ -29,17 +33,20 @@ const Cards = ({
       incrementScore(score);
     }
   };
-  return (
-    <div className="cards">
-      <h1>Composant : cards {score}</h1>
-      <FindCard findCardDatas={findCardDatas} />
-      <MyCard
-        myCardDatas={myCardDatas}
-        uniqueId
-        onClick={handleClick}
-      />
-    </div>
-  );
+  if (score < 20) {
+    return (
+      <div className="cards">
+        <h1>Ton score {score}</h1>
+        <FindCard findCardDatas={findCardDatas} />
+        <MyCard
+          myCardDatas={myCardDatas}
+          uniqueId
+          onClick={handleClick}
+        />
+      </div>
+    );
+  }
+  return <Redirect to="/finish" />;
 };
 
 Cards.propTypes = ({
