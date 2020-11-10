@@ -36,7 +36,7 @@ const Cards = ({
   if (score < 20) {
     return (
       <div className="cards">
-        <h1>Ton score {score}</h1>
+        <h1>Progression {score}/20</h1>
         <FindCard findCardDatas={findCardDatas} />
         <MyCard
           myCardDatas={myCardDatas}

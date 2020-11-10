@@ -4,10 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './cards.scss';
 
 const FindCard = ({ findCardDatas }) => (
-  <div className="cards-findcard">
-    <h1>Composant : Findcard</h1>
-    {findCardDatas.map((item) => (
-      <FontAwesomeIcon className="cards__mycard--items" key={item.id} icon={item.image} size="3x" />
+  <div className="cards__findcard">
+    {findCardDatas.map((item, index) => (
+      <FontAwesomeIcon
+        className={`cards__findcard--items${index}`}
+        key={item.id}
+        icon={item.image}
+        size="3x"
+        color={item.color}
+        style={{ width: `${Math.floor(Math.random() * (100 - 20 + 1)) + 20}px` }}
+      />
     ))}
   </div>
 );

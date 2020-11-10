@@ -24,7 +24,7 @@ const Clock = ({
       clearTimeout(token);
       storeTimer(minutes, seconds);
     };
-  });
+  }, [seconds]);
 
   return (
     <div className="clock">

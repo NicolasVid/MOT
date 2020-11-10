@@ -5,14 +5,15 @@ import './cards.scss';
 
 const MyCard = ({ myCardDatas, onClick }) => (
   <div className="cards__mycard">
-    <h1>Composant : MyCard</h1>
-    {myCardDatas.map((item) => (
-      <FontAwesomeIcon 
-        className="cards__mycard--items"
+    {myCardDatas.map((item, index) => (
+      <FontAwesomeIcon
+        className={`cards__mycard--items${index}`}
         key={item.id}
         icon={item.image}
         size="3x"
+        color={item.color}
         onClick={() => onClick(item.id)}
+        style={{ width: `${Math.floor(Math.random() * (70 - 30 + 1)) + 30}px` }}
       />
     ))}
   </div>
