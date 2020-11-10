@@ -2,6 +2,7 @@ import {
   GENERATE_MY_CARD_DATAS,
   GENERATE_FIND_CARD_DATAS,
   GENERATE_UNIQUE_ID,
+  INCREMENT_SCORE,
 } from '../actions/cards';
 
 import datas from '../data/items';
@@ -14,6 +15,7 @@ const initialState = {
   myCardData: [],
   findCardData: [],
   uniqueId: 0,
+  score: 0,
 };
 
 const counter = (state = initialState, action = {}) => {
@@ -32,6 +34,11 @@ const counter = (state = initialState, action = {}) => {
       return {
         ...state,
         uniqueId: getUniqueId(state.myCardData, state.findCardData),
+      };
+    case INCREMENT_SCORE:
+      return {
+        ...state,
+        score: action.score + 1,
       };
     default:
       return state;

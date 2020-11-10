@@ -9,9 +9,11 @@ const Cards = ({
   myCardDatas,
   findCardDatas,
   uniqueId,
+  score,
   generateMyCardDatas,
   generateFindCardDatas,
   generateUniqueId,
+  incrementScore,
 }) => {
   useEffect(() => {
     generateMyCardDatas();
@@ -24,11 +26,12 @@ const Cards = ({
       generateMyCardDatas();
       generateFindCardDatas();
       generateUniqueId();
+      incrementScore(score);
     }
   };
   return (
     <div className="cards">
-      <h1>Composant : cards</h1>
+      <h1>Composant : cards {score}</h1>
       <FindCard findCardDatas={findCardDatas} />
       <MyCard
         myCardDatas={myCardDatas}
@@ -43,9 +46,11 @@ Cards.propTypes = ({
   myCardDatas: PropTypes.array.isRequired,
   findCardDatas: PropTypes.array.isRequired,
   uniqueId: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
   generateMyCardDatas: PropTypes.func.isRequired,
   generateFindCardDatas: PropTypes.func.isRequired,
   generateUniqueId: PropTypes.func.isRequired,
+  incrementScore: PropTypes.func.isRequired,
 });
 
 export default Cards;
