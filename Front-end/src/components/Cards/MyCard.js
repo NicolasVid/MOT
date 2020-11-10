@@ -13,7 +13,7 @@ const MyCard = ({ myCardDatas, onClick }) => (
         size="3x"
         color={item.color}
         onClick={() => onClick(item.id)}
-        style={{ width: `${Math.floor(Math.random() * (70 - 30 + 1)) + 30}px` }}
+        style={{ width: `${Math.floor(Math.random() * (80 - 20 + 1)) + 20}px` }}
       />
     ))}
   </div>

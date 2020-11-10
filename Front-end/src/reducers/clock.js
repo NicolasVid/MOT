@@ -1,8 +1,8 @@
 import { STORE_TIMER } from '../actions/clock';
 
 const initialState = {
-  minutes: null,
-  seconds: null,
+  minutes: 0,
+  seconds: 0,
 };
 
 const counter = (state = initialState, action = {}) => {

@@ -4,6 +4,7 @@ import './clock.scss';
 
 const Clock = ({
   storeTimer,
+  score,
 }) => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -19,25 +20,26 @@ const Clock = ({
   };
 
   useEffect(() => {
+    storeTimer(minutes, seconds);
+  }, [score]);
+
+  useEffect(() => {
     const token = setTimeout(updateTime, 1000);
     return () => {
       clearTimeout(token);
-      storeTimer(minutes, seconds);
     };
   }, [seconds]);
 
   return (
     <div className="clock">
-      <h1>Composant : clock</h1>
-      <p>
-        time: {minutes}:{(seconds < 10) ? `0${seconds}` : `${seconds}`}
-      </p>
+      {minutes} : {(seconds < 10) ? `0${seconds}` : `${seconds}`}
     </div>
   );
 };
 
 Clock.propTypes = ({
   storeTimer: PropTypes.func.isRequired,
+  score: PropTypes.number.isRequired,
 });
 
 export default Clock;

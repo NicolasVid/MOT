@@ -5,9 +5,13 @@ import './finish.scss';
 
 const Finish = ({ minutes, seconds }) => (
   <div className="finish">
-    <h1>Composant : Finish</h1>
-    <p>Bravo tu as fini en {minutes} minutes et {seconds} secondes</p>
-    <Link to="/">Rejouer</Link>
+    <div className="finish--text">
+      <h2>Bravo tu as terminé en</h2>
+      <h2><span>{minutes}</span> minutes</h2>
+      <h2><span>{seconds}</span> secondes</h2>
+      <Link to="/countdown"><button type="button">Play again</button></Link>
+      <Link to="/"><button type="button">Home</button></Link>
+    </div>
   </div>
 );
 

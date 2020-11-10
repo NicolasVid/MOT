@@ -1,21 +1,33 @@
+@use 'src/styles/vars';
+
 .cards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
 
   h1 {
-    margin-bottom: 2rem;
-    font-size: 22px;
+      font-size: 28px;
+      margin-bottom: 0.4rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid vars.$main-color;
   }
 
+  span {
+    font-size: 30px;
+    color: vars.$main-color;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+
   &__mycard {
-    height: 280px;
-    width: 280px;
+    height: 30vh;
+    width: 100%;
     margin-top: 15%;
-    border-radius: 50%;
-    border: 1px solid black;
     position: relative;
+    border: 3px solid vars.$main-color;
+    background-color: rgba(#fff, 0.75);
 
       &--items0 {
         bottom: 18%;
@@ -61,11 +73,11 @@
   }
 
   &__findcard {
-    height: 280px;
-    width: 280px;
-    border-radius: 50%;
-    border: 1px solid black;
+    height: 30vh;
+    width: 100%;
     position: relative;
+    background-color: rgba(#fff, 0.75);
+    border: 3px solid vars.$main-color;
   
     &--items0 {
       bottom: 13%;

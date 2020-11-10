@@ -12,7 +12,7 @@ const FindCard = ({ findCardDatas }) => (
         icon={item.image}
         size="3x"
         color={item.color}
-        style={{ width: `${Math.floor(Math.random() * (100 - 20 + 1)) + 20}px` }}
+        style={{ width: `${Math.floor(Math.random() * (80 - 20 + 1)) + 20}px` }}
       />
     ))}
   </div>
