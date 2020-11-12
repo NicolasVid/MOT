@@ -1,5 +1,7 @@
+const score = require("../models/score");
+
 exports.getScores= (req, res, next) => {
-    scores.find()
+    score.find()
       .then((scores) => {
         res.status(200).json(scores);
       })
@@ -11,7 +13,12 @@ exports.getScores= (req, res, next) => {
   };
 
 exports.postScore = (req, res, next) => {
-    scores
+    const newScore = new score ({
+        name: req.body.name,
+        minutes: req.body.minutes,
+        seconds: req.body.seconds,
+    })
+    newScore
     .save()
     .then(() => {
       res.status(201).json({

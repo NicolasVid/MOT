@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// const baRoutes = require('./routes/score');
+const scoresRoutes = require('./routes/scores');
 
 const app = express();
 
@@ -25,6 +25,6 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-// app.use('/api/scores', scoresRoutes);
+app.use('/api/scores', scoresRoutes);
 
 module.exports = app;

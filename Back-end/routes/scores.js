@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const scoreCtrl = require('../controllers/ba');
+const scoreCtrl = require('../controllers/scores');
 
 router.get('/', scoreCtrl.getScores);
 router.post('/', scoreCtrl.postScore);
