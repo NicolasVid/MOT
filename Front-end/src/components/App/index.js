@@ -1,18 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import Cards from '../../containers/Cards';
 import Clock from '../../containers/Clock';
 import Home from '../Home';
-import Finish from '../Finish';
+import Finish from '../../containers/Finish';
+import Countdown from '../Countdown/countdown';
+import Scores from '../../containers/Scores';
 
 import './app.scss';
-import Countdown from '../Countdown/countdown';
 
-const App = ({
-  minutes,
-  seconds,
-}) => (
+const App = () => (
   <div className="app">
     <Route exact path="/">
       <Home />
@@ -25,17 +22,12 @@ const App = ({
       <Clock />
     </Route>
     <Route exact path="/finish">
-      <Finish
-        minutes={minutes}
-        seconds={seconds}
-      />
+      <Finish />
+    </Route>
+    <Route exact path="/scores">
+      <Scores />
     </Route>
   </div>
 );
-
-App.propTypes = ({
-  minutes: PropTypes.number.isRequired,
-  seconds: PropTypes.number.isRequired,
-});
 
 export default App;

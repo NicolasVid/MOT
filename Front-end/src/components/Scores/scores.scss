@@ -1,0 +1,51 @@
+@use 'src/styles/vars';
+
+.scores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5.5rem;
+
+    &--home {
+        position: absolute;
+        top: 1rem;
+        color: vars.$main-color;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: vars.$main-color;
+        margin-bottom: 3rem;
+    }
+
+    &__head {
+        margin-bottom: 1rem;
+        ul {
+            display: flex;
+        li {
+            width: 200px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: vars.$main-color;
+        }
+        }
+    }
+
+    &__row {
+        margin-bottom: 0.3rem;
+        ul {
+            display: flex;
+        li {
+            width: 200px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        }
+    }
+}

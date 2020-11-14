@@ -6,7 +6,7 @@ import { HashRouter } from 'react-router-dom';
 
 // == Import : local
 // Composants
-import App from './containers/App';
+import App from './components/App';
 // Store
 import store from './store';
 
