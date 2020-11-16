@@ -20,6 +20,7 @@ const Cards = ({
     generateMyCardDatas();
     generateFindCardDatas();
     generateUniqueId();
+    incrementScore(-1);
   }, []);
 
   const handleClick = (id) => {
