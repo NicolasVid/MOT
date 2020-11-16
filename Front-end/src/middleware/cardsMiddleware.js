@@ -9,7 +9,7 @@ import {
 const cardsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case POST_SCORE: {
-      axios.post('http://localhost:5000/api/scores',
+      axios.post('https://secure-ravine-46979.herokuapp.com/api/scores',
         {
           name: action.name,
           minutes: action.minutes,
@@ -25,7 +25,7 @@ const cardsMiddleware = (store) => (next) => (action) => {
       break;
     }
     case GET_SCORES: {
-      axios.get('http://localhost:5000/api/scores')
+      axios.get('https://secure-ravine-46979.herokuapp.com/api/scores')
         .then((response) => {
           store.dispatch(storeScores(response.data));
         })
