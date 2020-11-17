@@ -41,7 +41,12 @@ const Finish = ({
           ? (
             <form onSubmit={handleSubmit}>
               <h2>Enter you name to submit your</h2>
-              <input type="text" placeholder="Your name" onChange={handleChange} />
+              <input
+                type="text"
+                placeholder="Your name"
+                onChange={handleChange}
+                maxLength="8"
+              />
               <button type="submit">Post my score</button>
             </form>
           )

@@ -20,6 +20,14 @@ const Home = () => (
         color="black"
       />
     </Link>
+    <div className="home--rules">
+      <h2>Rules</h2>
+      <ul>
+        <li>Tap the symbol in common for both cards</li>
+        <li>If you tap the wrong symbol you loose 1 point</li>
+        <li>Reach 20 points to end the game</li>
+      </ul>
+    </div>
   </div>
 );
 

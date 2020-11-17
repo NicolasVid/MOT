@@ -30,6 +30,9 @@ const Cards = ({
       generateUniqueId();
       incrementScore(score);
     }
+    else {
+      incrementScore(score - 2);
+    }
   };
   if (score < 20) {
     return (

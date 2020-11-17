@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  padding-top: 1rem;
 
   h1 {
       font-size: 28px;
@@ -24,7 +24,7 @@
   &__mycard {
     height: 30vh;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 5%;
     position: relative;
     border: 3px solid vars.$main-color;
     background-color: rgba(#fff, 0.75);
@@ -49,7 +49,7 @@
 
       &--items3 {
         bottom: 22%;
-        left: 82%;
+        left: 76%;
         position: absolute;
       }
 
@@ -99,7 +99,7 @@
 
     &--items3 {
       bottom: 52%;
-      left: 81%;
+      left: 76%;
       position: absolute;
     }
 

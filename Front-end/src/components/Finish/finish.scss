@@ -25,6 +25,8 @@
         margin: 0 1.5rem;
 
         form {
+            display:flex;
+            flex-direction: column;
             h2 {
                 margin-top: 2rem;
             }
@@ -33,6 +35,7 @@
                 background-color: vars.$text-color;
                 border: none;
                 font-size: 30px;
+                width: 200px;
                 font-family: 'B612', sans-serif;
                 border-bottom: 1px solid black;
                 margin-top: 0.3rem;
@@ -40,6 +43,7 @@
 
             button {
                 margin-bottom: 2rem;
+                width: 250px;
             }
         }
 
@@ -68,6 +72,7 @@
             border: 1px solid black;
             margin-top: 1rem;
             font-size: 20px;
+            width: 200px;
         }
     }
 }
