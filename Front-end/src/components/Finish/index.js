@@ -13,6 +13,7 @@ const Finish = ({
   score,
   incrementScore,
   storeMessage,
+  pending,
 }) => {
   const [name, setName] = useState('');
   useEffect(() => () => {
@@ -47,7 +48,9 @@ const Finish = ({
                 onChange={handleChange}
                 maxLength="8"
               />
-              <button type="submit">Post my score</button>
+              {pending
+                ? <button type="button">Posting...</button>
+                : <button type="submit">Post my score</button>}
             </form>
           )
           : <h2 className="finish__message">{message}</h2>}
@@ -73,6 +76,7 @@ Finish.propTypes = ({
   score: PropTypes.number.isRequired,
   incrementScore: PropTypes.func.isRequired,
   storeMessage: PropTypes.func.isRequired,
+  pending: PropTypes.bool.isRequired,
 });
 
 export default Finish;

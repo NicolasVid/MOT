@@ -4,11 +4,13 @@ import {
   GET_SCORES,
   storeScores,
   storeMessage,
+  togglePending,
 } from '../actions/scores';
 
 const cardsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case POST_SCORE: {
+      store.dispatch(togglePending(true));
       axios.post('https://secure-ravine-46979.herokuapp.com/api/scores',
         {
           name: action.name,
@@ -20,6 +22,9 @@ const cardsMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+        })
+        .then(() => {
+          store.dispatch(togglePending(false));
         });
       next(action);
       break;

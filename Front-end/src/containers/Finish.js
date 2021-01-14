@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   seconds: state.clock.seconds,
   message: state.scores.message,
   score: state.cards.score,
+  pending: state.scores.pending,
 });
 
 const mapDispatchToProps = (dispatch) => ({
